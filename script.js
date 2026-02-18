@@ -38,8 +38,18 @@ console.log(json2,typeof json2);
 //     }).then(data=>{
 //         console.log(data.length);
 //     })
-fetch("https://jsonplaceholder.typicode.com/posts")
-    .then(res=>res.json())
-    .then(data=>{
-        console.log(data.length);
-    })
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//     .then(res=>res.json())
+//     .then(data=>{
+//         console.log(data.length);
+//     })
+ async function getData(){
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    // if(!response.ok){
+    //     console.log("error");
+    // }
+    const data = await response.json();
+    // console.log(data);
+    
+}
+getData()
