@@ -25,3 +25,21 @@ let json2 =[
 "company": {}
 },]
 console.log(json2,typeof json2);
+
+// fetch("https://jsonplaceholder.typicode.com/users").then(res=>res.json()).then(data=>{
+//     console.log(data);
+// })
+// fetch("https://jsonplaceholder.typicode.com/users")
+//     .then(res=>{
+//         console.log(res);
+//         let jsonPromise = res.json();
+//         console.log(jsonPromise);
+//         return jsonPromise
+//     }).then(data=>{
+//         console.log(data.length);
+//     })
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data.length);
+    })
