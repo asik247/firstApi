@@ -23,5 +23,22 @@ btnLoad.addEventListener("click", () => {
       }
     })
 })
+// Dummy Json fake data code start here;
+fetch("https://dummyjson.com/users")
+  .then(res => res.json())
+  .then(data => {
+    data.users.forEach(user => {
+        console.log(user.firstName);
+    });
+  })
 
+fetch("https://dummyjson.com/carts")
+  .then(res=>res.json())
+  .then(data=>{
+    console.log(data.carts);
+    data.carts.forEach(ele=>{
+      console.log(ele.total);
+    })
+  })
+// Dummy Json fake data code end here;
 
