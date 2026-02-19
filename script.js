@@ -5,10 +5,11 @@ btnLoad.addEventListener("click", () => {
     .then(res => res.json())
     .then(data => {
       // console.log(data);
+      let card = document.getElementById("card");
+      card.innerHTML = '';
       for (d of data) {
         // console.log(d);
-        let card = document.getElementById("card");
-        // card.innerHTML = '';
+
         let div = document.createElement("div")
         div.innerHTML = `
           
@@ -28,17 +29,23 @@ fetch("https://dummyjson.com/users")
   .then(res => res.json())
   .then(data => {
     data.users.forEach(user => {
-        console.log(user.firstName);
+      // console.log(user.firstName);
     });
   })
 
 fetch("https://dummyjson.com/carts")
-  .then(res=>res.json())
-  .then(data=>{
-    console.log(data.carts);
-    data.carts.forEach(ele=>{
-      console.log(ele.total);
-    })
-  })
-// Dummy Json fake data code end here;
+  .then(res => res.json())
+  .then(data => {
+    // console.log(data.carts);
+    // displayPost(data.carts)
+    displayPost(data.carts)
 
+  })
+
+const displayPost = (posts) => {
+  posts.forEach((post) => {
+    console.log(post.total);
+  })
+}
+// Dummy Json fake data code end here;
+console.log("don first api code");
